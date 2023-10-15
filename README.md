@@ -41,4 +41,4 @@ Sieh dir unsere [Next.js-Deploy-Dokumentation](https://nextjs.org/docs/deploymen
 
 ---
 
-Ich hoffe, das hilft dir weiter! Wenn du weitere Fragen oder Anforderungen hast, lass es mich wissen.
+Ich hoffe, das hilft dir weiter! Wenn du weitere Fragen oder Anforderungen hast, lass es mich wissen.# PDFEINFACHCHAT
