@@ -1,79 +1,44 @@
-![Build and Deploy Full Stack ChatPDF Clone](https://github.com/Elliott-Chong/chatpdf-yt/assets/77007117/7fcee290-ca52-46ee-ae82-3490f505270b)
+Natürlich, Ailex! Hier ist das Ganze auf Deutsch und im MD-Format:
 
-[Link to YouTube Tutorial](https://www.youtube.com/watch?v=bZFedu-0emE)
+---
 
-# Overview
+Dies ist ein [Next.js](https://nextjs.org/)-Projekt, das mit [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) initialisiert wurde.
 
-Welcome to the "chatpdf-yt" project, a comprehensive chat application with PDF integration. This project is designed to provide a seamless chat experience where users can upload PDF files, create chats around them, and interact with an AI assistant. The AI assistant uses the OpenAI API to generate responses based on the chat context. The application also includes a subscription feature, where users can subscribe to access premium features. The subscription process is handled using Stripe for payments and webhooks for event processing.
+## Erste Schritte
 
+Zuerst startest du den Entwicklungsserver:
 
-# Technologies and Frameworks
+```bash
+npm run dev
+# oder
+yarn dev
+# oder
+pnpm dev
+# oder
+bun dev
+```
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Clerk
-- Drizzle ORM
-- PostgreSQL
-- AWS SDK
-- OpenAI API
-- Stripe
-- Axios
-- Pinecone
-- Drizzle-kit
-- OpenAI Edge
-- Neon Database Serverless
-- Drizzle-orm/neon-http
-- @tanstack/react-query
-- @clerk/nextjs
-- clsx
-- tailwind-merge
+Öffne [http://localhost:3000](http://localhost:3000) in deinem Browser, um das Ergebnis zu sehen.
 
-# Installation
+Du kannst mit dem Bearbeiten der Seite beginnen, indem du `app/page.tsx` modifizierst. Die Seite aktualisiert sich automatisch, während du die Datei bearbeitest.
 
-Follow the steps below to install and setup the project:
+Dieses Projekt verwendet [`next/font`](https://nextjs.org/docs/basic-features/font-optimization), um automatisch Inter, eine benutzerdefinierte Google-Schriftart, zu optimieren und zu laden.
 
-1. **Clone the repository**
+## Mehr erfahren
 
-   Open your terminal and run the following command:
+Um mehr über Next.js zu erfahren, schaue dir die folgenden Ressourcen an:
 
-   ```bash
-   git clone https://github.com/Elliott-Chong/chatpdf-yt.git
-   ```
+- [Next.js-Dokumentation](https://nextjs.org/docs) - Erfahre mehr über die Funktionen und API von Next.js.
+- [Next.js lernen](https://nextjs.org/learn) - ein interaktives Next.js-Tutorial.
 
-2. **Navigate to the project directory**
+Du kannst auch das [Next.js GitHub-Repository](https://github.com/vercel/next.js/) besuchen - dein Feedback und Beiträge sind willkommen!
 
-   ```bash
-   cd chatpdf-yt
-   ```
+## Auf Vercel deployen
 
-3. **Install Node.js**
+Die einfachste Möglichkeit, deine Next.js-App zu deployen, besteht darin, die [Vercel-Plattform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) von den Erstellern von Next.js zu verwenden.
 
-   The project requires Node.js version 13.4.19 or later. You can download it from [here](https://nodejs.org/en/download/).
+Sieh dir unsere [Next.js-Deploy-Dokumentation](https://nextjs.org/docs/deployment) für weitere Details an.
 
-4. **Install the required dependencies**
+---
 
-   Run the following command to install all the required dependencies:
-
-   ```bash
-   npm install
-   ```
-
-   This will install all the dependencies listed in the `package.json` file, including Next.js, React, React DOM, Axios, Stripe, Tailwind CSS, and other specific dependencies such as "@aws-sdk/client-s3" and "@clerk/nextjs".
-
-5. **Setup environment variables**
-
-    Create a `.env` file in the root directory of your project and add the required environment variables.
-
-6. **Run the project**
-
-    Now, you can run the project using the following command:
-
-    ```bash
-    npm run dev
-    ```
-
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-
+Ich hoffe, das hilft dir weiter! Wenn du weitere Fragen oder Anforderungen hast, lass es mich wissen.
