@@ -1,9 +1,9 @@
 {
-  "name": "einfachchat",
+  "name": "saas",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "export NODE_OPTIONS='--max-old-space-size=8192' && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -38,8 +38,10 @@
     "eslint-config-next": "13.4.19",
     "eslint-import-resolver-typescript": "^3.6.0",
     "langchain": "^0.0.150",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.274.0",
     "md5": "^2.3.0",
+    "moment": "^2.29.4",
     "next": "^13.5.4",
     "openai-edge": "^1.2.2",
     "pdf-parse": "^1.1.1",
@@ -59,5 +61,17 @@
     "typescript": "5.2.2",
     "ws": "^8.14.2",
     "zod": "^3.22.4"
-  }
+  },
+  "description": "![Build and Deploy Full Stack ChatPDF Clone](https://github.com/Elliott-Chong/chatpdf-yt/assets/77007117/7fcee290-ca52-46ee-ae82-3490f505270b)",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Einfachalf/AICODERS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Einfachalf/AICODERS/issues"
+  },
+  "homepage": "https://github.com/Einfachalf/AICODERS#readme"
 }
