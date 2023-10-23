@@ -1,13 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { UserButton, auth } from "@clerk/nextjs";
+import { GetServerSidePropsContext } from 'next';
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs";
 import Link from "next/link";
 import { ArrowRight, LogIn } from "lucide-react";
 import FileUpload from "@/components/FileUpload";
 import { checkSubscription } from "@/lib/subscription";
 import SubscriptionButton from "@/components/SubscriptionButton";
-import { db } from "@/lib/db";
-import { chats } from "@/lib/db/schema";
-import { eq } from "drizzle-orm";
+import { db as database } from "@/lib/db";
+import { chats as chatSchema } from "@/lib/db/schema";
+import { eq as isEqual } from "drizzle-orm";
+
+
 
 type HomeProps = {
   isAuth: boolean;
@@ -62,24 +66,18 @@ export default function Home({ isAuth, isPro, firstChat }: HomeProps) {
     </div>
   );
 }
-
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { userId } = await auth();
   const isAuth = !!userId;
-  const isPro = await checkSubscription();
   let firstChat;
   if (userId) {
-    firstChat = await db.select().from(chats).where(eq(chats.userId, userId));
-    if (firstChat) {
-      firstChat = firstChat[0];
-    }
+    const chatsResult = await database.select().from(chatSchema).where(isEqual(chatSchema.userId, userId));
+    firstChat = chatsResult && chatsResult.length > 0 ? chatsResult[0] : null;
   }
-
-  return {
-    props: {
-      isAuth,
-      isPro,
-      firstChat
-    }
+  const props = {
+    isAuth: !!userId,
+    isPro: false, // Replace false with the actual value of isPro
+    firstChat
   };
+  return { props };
 }
