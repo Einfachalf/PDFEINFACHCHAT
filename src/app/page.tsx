@@ -9,17 +9,13 @@ import { db } from "@/lib/db";
 import { chats } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 
-export default async function Home() {
-  const { userId } = await auth();
-  const isAuth = !!userId;
-  const isPro = await checkSubscription();
-  let firstChat;
-  if (userId) {
-    firstChat = await db.select().from(chats).where(eq(chats.userId, userId));
-    if (firstChat) {
-      firstChat = firstChat[0];
-    }
-  }
+type HomeProps = {
+  isAuth: boolean;
+  isPro: boolean;
+  firstChat: any; // Ersetzen Sie 'any' durch den tatsächlichen Typ, wenn er bekannt ist
+};
+
+export default function Home({ isAuth, isPro, firstChat }: HomeProps) {
   return (
     <div className="w-screen min-h-screen bg-gradient-to-r from-rose-100 to-teal-100">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -45,8 +41,8 @@ export default async function Home() {
           </div>
 
           <p className="max-w-xl mt-1 text-lg text-slate-600">
-            Join millions of students, researchers and professinals to instantly
-            anwer questions and understand research with AI
+            Join millions of students, researchers and professionals to instantly
+            answer questions and understand research with AI
           </p>
 
           <div className="w-full mt-4">
@@ -65,4 +61,25 @@ export default async function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { userId } = await auth();
+  const isAuth = !!userId;
+  const isPro = await checkSubscription();
+  let firstChat;
+  if (userId) {
+    firstChat = await db.select().from(chats).where(eq(chats.userId, userId));
+    if (firstChat) {
+      firstChat = firstChat[0];
+    }
+  }
+
+  return {
+    props: {
+      isAuth,
+      isPro,
+      firstChat
+    }
+  };
 }
